@@ -1,0 +1,303 @@
+/* Silkscreen font */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+/* Loader animation */
+@import 'loader.css';
+
+/* shadcn library */
+@import 'shadcn.css';
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Global variables */
+:root {
+  --accent-color: #ca228c;
+  --background-color: #1d1e20;
+}
+
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Global styles */
+
+body {
+  z-index: -400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background-color);
+  color: #dadadb;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Silkscreen', sans-serif;
+}
+
+main {
+  padding: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.nav-header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 0 1px 15px 5px black;
+  font-family: 'Silkscreen', sans-serif;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343536;
+  & a {
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: var(--accent-color);
+    }
+    &.active {
+      background-color: var(--accent-color);
+      color: black;
+    }
+  }
+}
+
+nav .left-links {
+  display: flex;
+  flex-direction: row;
+}
+
+nav .right-links {
+  display: flex;
+  flex-direction: row;
+  margin-right: 100px;
+}
+
+.header-section {
+  width: 50%;
+  margin: 0 auto;
+  /* margin-top: 100px; */
+  text-align: center;
+}
+
+.header-section h1 {
+  cursor: default;
+  transition: color 0.3s ease-in-out;
+  font-size: 3.5rem;
+  font-weight: 700;
+  /* margin-top: 80px; */
+  margin-bottom: 50px;
+  text-shadow: 4px 4px 4px var(--accent-color);
+}
+
+.header-section p {
+  line-height: 1.5;
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-top: 50px;
+}
+
+form {
+  z-index: 1;
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+}
+
+.form-section {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  flex-shrink: 1;
+  background-color: #1d1e20;
+}
+
+input[type='text'],
+button {
+  border: none;
+}
+
+input[type='text'] {
+  z-index: 1;
+
+  flex: 8;
+  padding: 20px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #343536;
+  color: #dadadb;
+  transition: all 0.5s ease-in-out;
+}
+
+.form-control {
+  font-family: 'Silkscreen', sans-serif;
+  padding: 20px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #343536;
+  color: #dadadb;
+  transition: all 0.5s ease-in-out;
+}
+
+.form-control:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.btn {
+  font-family: 'Silkscreen', sans-serif;
+  flex: 1;
+  background: #000000;
+  color: #dadadb;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+  color: #000000;
+}
+
+.hr-line {
+  margin: 70px 0 20px;
+  border: 1px solid #343536;
+}
+
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Just by changing this width we make space for the 'Aside' section */
+  /* TODO: remove the form section, so it's not affected by the width */
+  width: 100%;
+  padding-inline: 100px;
+  overflow-y: auto;
+  position: relative;
+  bottom: 0;
+}
+
+.chat-container {
+  z-index: -1;
+  padding-inline: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+  width: 100%;
+  background-color: #000000;
+  /* height: 89vh; */
+  height: 100%;
+  overflow-y: auto;
+  bottom: 0;
+  position: absolute;
+}
+
+.chat-container .chat {
+  font-size: large;
+  border-radius: 5px;
+  padding-inline: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  /* margin-bottom: 50px; */
+}
+
+.chat-bubble {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow: wrap;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* TODO: better styling for the chat bubbles */
+.chat-bubble.user {
+  color: #000000;
+  background-color: var(--accent-color);
+  &:before {
+    color: white;
+    content: 'You say:';
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+footer,
+footer p {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  bottom: -280px;
+  /* width: 100vw; */
+  height: 100px;
+  /* margin-bottom: 400px; */
+}
+
+.chat-bubble.system {
+  background-color: aquamarine;
+  color: #000000;
+  &:before {
+    color: white;
+    content: '🤖';
+  }
+}
+
+a:hover {
+  color: #000000;
+  background-color: var(--accent-color);
+}
+
+.header-section h1:hover {
+  color: var(--accent-color);
+}

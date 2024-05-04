@@ -1,0 +1,10 @@
+{
+  "extends": [
+    // "eslint:recommended",
+    "next",
+    "prettier",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react"
+  ],
+  "rules": {}
+}
